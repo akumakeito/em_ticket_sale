@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/hotelsFragment"
+        android:name="com.akumakeito.ticketsales.HotelsFragment"
+        android:label="fragment_hotels"
+        tools:layout="@layout/fragment_hotels" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.akumakeito.ticketsales.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.akumakeito.ticketsales.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/shortsFragment"
+        android:name="com.akumakeito.ticketsales.ShortsFragment"
+        android:label="fragment_shorts"
+        tools:layout="@layout/fragment_shorts" />
+    <fragment
+        android:id="@+id/subscribesFragment"
+        android:name="com.akumakeito.ticketsales.SubscribesFragment"
+        android:label="fragment_subscribes"
+        tools:layout="@layout/fragment_subscribes" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.akumakeito.ticketsales.SearchFragment"
+        android:label="SearchFragment" />
+</navigation>

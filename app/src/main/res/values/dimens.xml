@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing_28dp">28dp</dimen>
+    <dimen name="search_shape_corner_radius">16dp</dimen>
+    <dimen name="fast_active_shape_corner_radius">8dp</dimen>
+    <dimen name="spacing_36">36dp</dimen>
+    <dimen name="music_image_size">132dp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="icon_button_size">48dp</dimen>
+    <dimen name="spacing_24dp">24dp</dimen>
+    <dimen name="small_image_size_40dp">40dp</dimen>
+    <dimen name="spacing_12dp">12dp</dimen>
+</resources>

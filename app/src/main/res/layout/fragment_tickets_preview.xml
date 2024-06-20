@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="@dimen/spacing_16"
+    android:background="?attr/background"
+    tools:context=".TicketsPreviewFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/grey3"
+        android:background="@drawable/search_background_shape"
+        android:layout_marginTop="46dp"
+        android:paddingStart="@dimen/spacing_8"
+        android:paddingEnd="@dimen/spacing_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:contentDescription="@string/search"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/barrier"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="from_input_container,divider,to_input_container"
+            app:layout_constraintStart_toEndOf="@id/iv_search_icon" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/from_input_container"
+            style="@style/SearchInputContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/from_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:endIconCheckable="true"
+            app:endIconTint="@color/white"
+            app:endIconDrawable="@drawable/ic_change_directions"
+            app:endIconMode="custom"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/from_edit_text"
+                style="@style/SearchInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:dividerColor="@color/grey5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@id/from_input_container" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/to_input_container"
+            style="@style/SearchInputContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:endIconTint="@color/white"
+            android:hint="@string/to_hint"
+            app:endIconMode="clear_text"
+            app:endIconDrawable="@drawable/ic_clear"
+            app:endIconCheckable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@id/from_input_container">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/to_edit_text"
+                android:layout_width="match_parent"
+                style="@style/SearchInputEditText"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@+id/search_container">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_date_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ChipSuggestion"
+            app:chipIcon="@drawable/ic_add"
+            android:text="@string/back_date"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_date_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ChipSuggestion"
+            android:text="@string/date_start"
+            tools:text="24 фев, сб"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_people_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ChipSuggestion"
+            app:chipIcon="@drawable/ic_profile"
+            android:text="@string/people_class"
+            tools:text="1,эконом"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ChipSuggestion"
+            app:chipIcon="@drawable/ic_filter"
+            android:text="@string/filters"/>
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <LinearLayout
+        android:id="@+id/rv_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing_12dp"
+        android:padding="@dimen/spacing_16"
+        app:layout_constraintTop_toBottomOf="@id/chip_group"
+        android:background="@drawable/search_background_shape"
+        android:backgroundTint="@color/grey1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/straight_flight"
+            style="@style/Title2"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tickets_preview_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/card_tickets_preview"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/FilledButtonStyle"
+        android:layout_marginTop="@dimen/spacing_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_container"
+        android:text="@string/show_all_tickets"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

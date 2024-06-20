@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Title1" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">@dimen/text_size_22</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Title2" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Title3" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Title3.1" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+
+    <style name="Title4" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/sf_pro_display_regular_italic</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular_italic</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
+    <style name="Text1" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+
+    <style name="Text2" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text3" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TabText" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonText" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="fontStyle">italic</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonText1" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/sf_pro_display_regular_italic</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular_italic</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="FilledButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:textAppearance">@style/ButtonText1</item>
+        <item name="backgroundTint">@color/blue</item>
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.App.RoundedCornerImage8</item>
+    </style>
+
+    <style name="NavBarStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/NavBarActiveItemStyle</item>
+        <item name="itemTextColor">@color/nav_bar_menu_color_selector</item>
+        <item name="itemIconTint">@color/nav_bar_menu_color_selector</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemTextAppearanceInactive">@style/TabText</item>
+        <item name="itemTextAppearanceActive">@style/TabText</item>
+        <item name="itemTextAppearanceActiveBoldEnabled">false</item>
+        <item name="itemPaddingTop">@dimen/spacing_20</item>
+        <item name="itemPaddingBottom">@dimen/spacing_20</item>
+    </style>
+
+
+    <style name="NavBarActiveItemStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@android:color/transparent</item>
+    </style>
+
+    <style name="OutlinedInputText" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="expandedHintEnabled">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+
+    <style name="SearchInputContainer" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="endIconTint">@color/white</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="hintTextAppearance">@style/ButtonText</item>
+        <item name="android:textColorHint">@color/grey6</item>
+    </style>
+
+    <style name="SearchInputEditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textAppearance">@style/OutlinedInputText</item>
+        <item name="android:textColor">@color/white</item>
+   </style>
+
+    <style name="ShapeAppearanceOverlay.App.RoundedCornerImage16" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/search_shape_corner_radius</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.RoundedCornerImage8" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/fast_active_shape_corner_radius</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.ButtonRoundedLeft" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">50%</item>
+        <item name="cornerSizeTopLeft">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.ButtonRoundedRight" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">50%</item>
+        <item name="cornerSizeTopRight">50%</item>
+    </style>
+
+    <style name="ButtonRoundedLeft" parent="Widget.Material3.Button">
+        <item name="android:textAppearance">@style/ButtonText</item>
+        <item name="backgroundTint">@color/blue</item>
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.ButtonRoundedLeft</item>
+    </style>
+
+    <style name="ButtonRoundedRight" parent="Widget.Material3.Button">
+        <item name="android:textAppearance">@style/ButtonText1</item>
+        <item name="backgroundTint">@color/blue</item>
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.ButtonRoundedRight</item>
+    </style>
+
+    <style name="Widget.App.MaterialDivider" parent="Widget.Material3.MaterialDivider">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.MaterialDivider</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialDivider" parent="">
+        <item name="colorOutline">@color/grey1</item>
+    </style>
+
+    <style name="Widget.App.IconButton.Filled" parent="Widget.Material3.Button.IconButton.Filled">
+        <item name="iconSize">24dp</item>
+        <item name="android:paddingLeft">@dimen/spacing_8</item>
+        <item name="android:paddingRight">@dimen/spacing_4</item>
+        <item name="android:paddingTop">@dimen/spacing_4</item>
+        <item name="android:paddingBottom">@dimen/spacing_4</item>
+        <item name="android:minWidth">@dimen/icon_button_size</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.Shape.Corner.Full</item>
+
+    </style>
+
+    <style name="ShapeAppearance.App.Shape.Corner.Full" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/fast_active_shape_corner_radius</item>
+    </style>
+
+    <style name="ChipSuggestion" parent="Widget.Material3.Chip.Suggestion">
+        <item name="chipBackgroundColor">@color/grey3</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipIconVisible">true</item>
+        <!--        <item name="chipIconTint"></item>-->
+        <item name="android:textColor">@color/white</item>
+        <item name="shapeAppearance">@style/ChipShape</item>
+        <item name="closeIconVisible">false</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="android:textAppearance">@style/Title4
+        </item><!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>-->
+    </style>
+
+    <style name="ThemeOverlay.App.Chip" parent="">
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorSurfaceContainerLow">@color/grey3</item>
+        <item name="colorSecondaryContainer">@color/dark_blue</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+
+    </style>
+
+    <style name="ChipShape" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+</resources>
