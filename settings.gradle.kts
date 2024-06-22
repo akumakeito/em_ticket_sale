@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "ticketSales"
-include("app","data", "domain", "core")
+include("app","data", "domain")
