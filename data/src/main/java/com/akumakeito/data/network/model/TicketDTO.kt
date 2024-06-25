@@ -8,7 +8,7 @@ data class TicketDTO(
     @SerializedName("arrival")
     val arrival: Arrival,
     @SerializedName("badge")
-    val badge: String,
+    val badge: String? = null,
     @SerializedName("company")
     val company: String,
     @SerializedName("departure")

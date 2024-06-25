@@ -1,14 +1,17 @@
 package com.akumakeito.domain.repository
 
-import com.akumakeito.domain.state.ResultState
 import com.akumakeito.domain.model.MusicOffer
 import com.akumakeito.domain.model.Ticket
 import com.akumakeito.domain.model.TicketOffer
-import kotlinx.coroutines.flow.Flow
+import com.akumakeito.domain.state.AppState
 
 interface TicketRepository {
-    suspend fun getMusicOffers() : ResultState<Flow<MusicOffer>>
-    suspend fun getTicketOffers() : ResultState<Flow<TicketOffer>>
-    suspend fun getTickets() : ResultState<Flow<Ticket>>
+    suspend fun getMusicOffers(): AppState<List<MusicOffer>>
+    suspend fun getTicketOffers(): AppState<List<TicketOffer>>
+    suspend fun getTickets(): AppState<List<Ticket>>
+
+    suspend fun saveDestinations(fromDest: String)
+    suspend fun getDestinations(): String?
+
 
 }

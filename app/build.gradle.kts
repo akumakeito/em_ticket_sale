@@ -23,6 +23,9 @@ android {
     }
 
     buildTypes {
+        debug {
+
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -47,6 +50,7 @@ dependencies {
     implementation (libs.dagger)
     kapt(libs.dagger.compiler)
 
+    implementation(libs.androidx.preference.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.savedstate)
     kapt(libs.androidx.lifecycle.compiler)

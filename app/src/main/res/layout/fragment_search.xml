@@ -1,343 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey2"
-    android:padding="@dimen/spacing_16">
+    android:gravity="top">
 
-    <LinearLayout
-        android:id="@+id/directions_container"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:layout_marginBottom="@dimen/spacing_24dp"
-        android:background="@drawable/search_background_shape"
-        android:backgroundTint="@color/grey3"
-        android:orientation="vertical"
-        android:paddingHorizontal="@dimen/spacing_16"
-        app:layout_constraintBottom_toTopOf="@id/barrier"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/from_input_container"
-            style="@style/SearchInputContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:endIconMode="clear_text"
-            android:hint="@string/from_hint"
-            app:endIconDrawable="@drawable/ic_clear"
-            app:startIconDrawable="@drawable/ic_flight_from">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/from_edit_text"
-                android:layout_width="match_parent"
-                style="@style/SearchInputEditText"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:dividerColor="@color/grey5" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/to_input_container"
-            style="@style/SearchInputContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/to_hint"
-            app:endIconMode="clear_text"
-            app:endIconDrawable="@drawable/ic_clear"
-            app:startIconDrawable="@drawable/ic_search"
-            app:startIconTint="@color/white">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/to_edit_text"
-                style="@style/SearchInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="directions_container" />
+        android:layout_height="match_parent">
 
-
-    <LinearLayout
-        android:id="@+id/complex_route_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@id/everywhere_container"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barrier">
-
-        <Button
-            style="@style/Widget.App.IconButton.Filled"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/green"
-            app:icon="@drawable/ic_complex_route" />
-
-        <TextView
-            style="@style/Text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_8"
-            android:gravity="center"
-            android:text="@string/complex_route"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/everywhere_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@id/weekends_container"
-        app:layout_constraintStart_toEndOf="@id/complex_route_container"
-        app:layout_constraintTop_toBottomOf="@id/barrier">
-
-        <Button
-            style="@style/Widget.App.IconButton.Filled"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
-            app:icon="@drawable/ic_everywhere" />
-
-        <TextView
-            style="@style/Text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_8"
-            android:text="@string/everywhere"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/weekends_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@id/hot_sale_container"
-        app:layout_constraintStart_toEndOf="@id/everywhere_container"
-        app:layout_constraintTop_toBottomOf="@id/barrier">
-
-        <Button
-            style="@style/Widget.App.IconButton.Filled"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/dark_blue"
-            app:icon="@drawable/ic_weekends" />
-
-        <TextView
-            style="@style/Text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_8"
-            android:text="@string/weekends"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/hot_sale_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/weekends_container"
-        app:layout_constraintTop_toBottomOf="@id/barrier">
-
-        <Button
-            style="@style/Widget.App.IconButton.Filled"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/red"
-            app:icon="@drawable/ic_hot_sale" />
-
-        <TextView
-            style="@style/Text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_8"
-            android:gravity="center"
-            android:text="@string/hot_sale"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="complex_route_container, hot_sale_container, everywhere_container, weekends_container" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
-        android:padding="@dimen/spacing_16"
-        android:background="@drawable/search_background_shape"
-        android:backgroundTint="@color/grey3"
-        android:orientation="vertical">
-        
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/istanbul_container"
+            style="@style/Widget.Material3.BottomSheet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:background="@drawable/bottom_sheet_shape"
+            android:gravity="top"
+            android:padding="@dimen/spacing_16"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_istanbul"
-                android:layout_width="@dimen/small_image_size_40dp"
-                android:layout_height="@dimen/small_image_size_40dp"
-                android:scaleType="centerCrop"
-                android:layout_marginTop="@dimen/spacing_8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundedCornerImage8"
-                app:srcCompat="@drawable/image_istanbul" />
-
-            <TextView
-                android:id="@+id/tv_istanbul"
-                style="@style/Title3.1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/istanbul"
-                android:layout_marginStart="@dimen/spacing_8"
-                app:layout_constraintTop_toTopOf="@id/iv_istanbul"
-                app:layout_constraintStart_toEndOf="@id/iv_istanbul" />
-
-            <TextView
-                android:id="@+id/tv_istanbul_popular"
-                style="@style/Text3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/popular_direction"
-                android:textColor="@color/grey5"
-                android:layout_marginStart="@dimen/spacing_8"
-                app:layout_constraintBottom_toBottomOf="@id/iv_istanbul"
-                app:layout_constraintStart_toEndOf="@id/iv_istanbul" />
-            
-            <com.google.android.material.divider.MaterialDivider
+            <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+                android:id="@+id/drag_handle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/iv_istanbul"
-                android:layout_marginTop="@dimen/spacing_8"
-                app:dividerColor="@color/grey4"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/directions_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="46dp"
+                android:layout_marginBottom="@dimen/spacing_24dp"
+                android:background="@drawable/search_background_shape"
+                android:backgroundTint="@color/grey3"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/spacing_16"
+                app:layout_constraintBottom_toTopOf="@id/barrier"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/from_input_container"
+                    style="@style/SearchInputContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/from_hint"
+                    app:endIconDrawable="@drawable/ic_clear"
+                    app:endIconMode="clear_text"
+                    app:startIconDrawable="@drawable/ic_flight_from">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/from_edit_text"
+                        style="@style/SearchInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:dividerColor="@color/grey5" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/to_input_container"
+                    style="@style/SearchInputContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/to_hint"
+                    app:endIconDrawable="@drawable/ic_clear"
+                    app:endIconMode="clear_text"
+                    app:startIconDrawable="@drawable/ic_search"
+                    app:startIconTint="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/to_edit_text"
+                        style="@style/SearchInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="directions_container" />
+
+
+            <LinearLayout
+                android:id="@+id/complex_route_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/everywhere_container"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier">
+
+                <Button
+                    android:id="@+id/btn_complex_route"
+                    style="@style/Widget.App.IconButton.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/green"
+                    app:icon="@drawable/ic_complex_route" />
+
+                <TextView
+                    style="@style/Text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:gravity="center"
+                    android:text="@string/complex_route"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/everywhere_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/weekends_container"
+                app:layout_constraintStart_toEndOf="@id/complex_route_container"
+                app:layout_constraintTop_toBottomOf="@id/barrier">
+
+                <Button
+                    android:id="@+id/btn_everywhere"
+                    style="@style/Widget.App.IconButton.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/blue"
+                    app:icon="@drawable/ic_everywhere" />
+
+                <TextView
+                    style="@style/Text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:text="@string/everywhere"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/weekends_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/hot_sale_container"
+                app:layout_constraintStart_toEndOf="@id/everywhere_container"
+                app:layout_constraintTop_toBottomOf="@id/barrier">
+
+                <Button
+                    android:id="@+id/btn_weekends"
+                    style="@style/Widget.App.IconButton.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/dark_blue"
+                    app:icon="@drawable/ic_weekends" />
+
+                <TextView
+                    style="@style/Text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:text="@string/weekends"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hot_sale_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/weekends_container"
+                app:layout_constraintTop_toBottomOf="@id/barrier">
+
+                <Button
+                    android:id="@+id/btn_hot_sales"
+                    style="@style/Widget.App.IconButton.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/red"
+                    app:icon="@drawable/ic_hot_sale" />
+
+                <TextView
+                    style="@style/Text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:gravity="center"
+                    android:text="@string/hot_sale"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="complex_route_container, hot_sale_container, everywhere_container, weekends_container" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/search_background_shape"
+                android:backgroundTint="@color/grey3"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_16"
+                app:layout_constraintTop_toBottomOf="@id/barrier2">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_popularDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/card_popular_destinations" />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/sochi_container"
-            android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/spacing_8"
-            android:layout_height="wrap_content">
+    </FrameLayout>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_sochi"
-                android:layout_width="@dimen/small_image_size_40dp"
-                android:layout_height="@dimen/small_image_size_40dp"
-                android:scaleType="centerCrop"
-                android:layout_marginTop="@dimen/spacing_8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundedCornerImage8"
-                app:srcCompat="@drawable/image_sochi" />
-
-            <TextView
-                android:id="@+id/tv_sochi"
-                style="@style/Title3.1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sochi"
-                android:layout_marginStart="@dimen/spacing_8"
-                app:layout_constraintTop_toTopOf="@id/iv_sochi"
-                app:layout_constraintStart_toEndOf="@id/iv_sochi" />
-
-            <TextView
-                android:id="@+id/tv_sochi_popular"
-                style="@style/Text3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/popular_direction"
-                android:textColor="@color/grey5"
-                android:layout_marginStart="@dimen/spacing_8"
-                app:layout_constraintBottom_toBottomOf="@id/iv_sochi"
-                app:layout_constraintStart_toEndOf="@id/iv_sochi" />
-
-            <com.google.android.material.divider.MaterialDivider
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/iv_sochi"
-                android:layout_marginTop="@dimen/spacing_8"
-                app:dividerColor="@color/grey4"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/phuket_container"
-            android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/spacing_8"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_phuket"
-                android:layout_width="@dimen/small_image_size_40dp"
-                android:layout_height="@dimen/small_image_size_40dp"
-                android:scaleType="centerCrop"
-                android:layout_marginTop="@dimen/spacing_8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundedCornerImage8"
-                app:srcCompat="@drawable/image_phuket" />
-
-            <TextView
-                android:id="@+id/tv_phuket"
-                style="@style/Title3.1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/phuket"
-                android:layout_marginStart="@dimen/spacing_8"
-                app:layout_constraintTop_toTopOf="@id/iv_phuket"
-                app:layout_constraintStart_toEndOf="@id/iv_phuket" />
-
-            <TextView
-                android:id="@+id/tv_phuket_popular"
-                style="@style/Text3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/popular_direction"
-                android:textColor="@color/grey5"
-                android:layout_marginStart="@dimen/spacing_8"
-                app:layout_constraintBottom_toBottomOf="@id/iv_phuket"
-                app:layout_constraintStart_toEndOf="@id/iv_phuket" />
-
-            <com.google.android.material.divider.MaterialDivider
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/iv_phuket"
-                android:layout_marginTop="@dimen/spacing_8"
-                app:dividerColor="@color/grey4"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-            
-        
-    </LinearLayout>
-        
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

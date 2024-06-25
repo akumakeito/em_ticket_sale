@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/background"
     android:padding="@dimen/spacing_16"
-    tools:context=".MainFragment">
+    tools:context=".screens.tickets.MainFragment">
 
 
     <TextView
@@ -44,12 +44,13 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:id="@+id/iv_search_icon"
+                android:id="@+id/iv_back_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_16"
                 android:contentDescription="@string/search"
                 android:src="@drawable/ic_search"
+                app:tint="@color/grey6"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/barrier"
                 app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +62,7 @@
                 android:layout_height="wrap_content"
                 app:barrierDirection="start"
                 app:constraint_referenced_ids="from_input_container,divider,to_input_container"
-                app:layout_constraintStart_toEndOf="@id/iv_search_icon" />
+                app:layout_constraintStart_toEndOf="@id/iv_back_icon" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -77,6 +78,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/from_edit_text"
                     android:layout_width="match_parent"
+                    android:imeOptions="actionNext"
                     style="@style/SearchInputEditText"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -103,8 +105,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/to_edit_text"
                     style="@style/SearchInputEditText"
+                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:imeOptions="actionDone"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -123,6 +127,7 @@
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_music_offers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tv_header_music_fly"
@@ -132,10 +137,14 @@
         android:orientation="horizontal"
         tools:listitem="@layout/card_fly_to_music"/>
 
-
-
-
-
-
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,19 @@
     android:orientation="vertical"
     android:padding="@dimen/spacing_16"
     android:background="?attr/background"
-    tools:context=".TicketFeedFragment">
+    tools:context=".screens.tickets.TicketFeedFragment">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/about_ticket_container"
@@ -49,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_8"
             android:layout_marginTop="@dimen/spacing_4"
-            android:text="@string/from_to"
+            android:text="@string/date_pass"
             android:textColor="@color/grey6"
             app:layout_constraintStart_toEndOf="@+id/arrow_back"
             app:layout_constraintTop_toBottomOf="@+id/tv_destinations"
@@ -59,8 +71,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_tickets"
+        android:layout_marginBottom="@dimen/spacing_36"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/about_ticket_container"
         tools:listitem="@layout/card_ticket" />
 

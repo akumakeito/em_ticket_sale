@@ -1,15 +1,20 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.TicketSales" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.TicketSales" parent="Theme.Material3.Dark.NoActionBar">
 
         <item name="background">@color/black</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
         <item name="colorContainer">@color/blue</item>
         <item name="colorOnContainer">@color/white</item>
         <item name="colorOnSurface">@color/grey5</item>
         <item name="navigationViewStyle">@style/NavBarStyle</item>
         <item name="colorOutlineVariant">@color/grey1</item>
+        <item name="colorControlActivated">@color/white</item>
 
         <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+
     </style>
 
     <style name="Theme.TicketSales" parent="Base.Theme.TicketSales" />

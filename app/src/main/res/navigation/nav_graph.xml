@@ -3,35 +3,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/searchFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/hotelsFragment"
-        android:name="com.akumakeito.ticketsales.HotelsFragment"
+        android:name="com.akumakeito.ticketsales.screens.stub.HotelsFragment"
         android:label="fragment_hotels"
         tools:layout="@layout/fragment_hotels" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.akumakeito.ticketsales.ProfileFragment"
+        android:name="com.akumakeito.ticketsales.screens.stub.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.akumakeito.ticketsales.MainFragment"
+        android:name="com.akumakeito.ticketsales.screens.tickets.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_everywhereFragment"
+            app:destination="@id/everywhereFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_weekendsFragment"
+            app:destination="@id/weekendsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_complexRouteFragment"
+            app:destination="@id/complexRouteFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_hotSalesFragment"
+            app:destination="@id/hotSalesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_ticketsPreviewFragment"
+            app:destination="@id/ticketsPreviewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/shortsFragment"
-        android:name="com.akumakeito.ticketsales.ShortsFragment"
+        android:name="com.akumakeito.ticketsales.screens.stub.ShortsFragment"
         android:label="fragment_shorts"
         tools:layout="@layout/fragment_shorts" />
     <fragment
         android:id="@+id/subscribesFragment"
-        android:name="com.akumakeito.ticketsales.SubscribesFragment"
+        android:name="com.akumakeito.ticketsales.screens.stub.SubscribesFragment"
         android:label="fragment_subscribes"
         tools:layout="@layout/fragment_subscribes" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.akumakeito.ticketsales.SearchFragment"
+        android:name="com.akumakeito.ticketsales.screens.tickets.SearchFragment"
         android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/complexRouteFragment"
+        android:name="com.akumakeito.ticketsales.screens.stub.ComplexRouteFragment"
+        android:label="fragment_complex_route"
+        tools:layout="@layout/fragment_complex_route" />
+    <fragment
+        android:id="@+id/hotSalesFragment"
+        android:name="com.akumakeito.ticketsales.screens.stub.HotSalesFragment"
+        android:label="fragment_hot_sales"
+        tools:layout="@layout/fragment_hot_sales" />
+    <fragment
+        android:id="@+id/ticketFeedFragment"
+        android:name="com.akumakeito.ticketsales.screens.tickets.TicketFeedFragment"
+        android:label="fragment_ticket_feed"
+        tools:layout="@layout/fragment_ticket_feed" />
+    <fragment
+        android:id="@+id/ticketsPreviewFragment"
+        android:name="com.akumakeito.ticketsales.screens.tickets.TicketsPreviewFragment"
+        android:label="fragment_tickets_preview"
+        tools:layout="@layout/fragment_tickets_preview">
+        <action
+            android:id="@+id/action_ticketsPreviewFragment_to_ticketFeedFragment"
+            app:destination="@id/ticketFeedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weekendsFragment"
+        android:name="com.akumakeito.ticketsales.screens.stub.WeekendsFragment"
+        android:label="fragment_weekends"
+        tools:layout="@layout/fragment_weekends" />
+    <fragment
+        android:id="@+id/everywhereFragment"
+        android:name="com.akumakeito.ticketsales.screens.stub.EverywhereFragment"
+        android:label="EverywhereFragment" />
 </navigation>

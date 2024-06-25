@@ -111,6 +111,7 @@
     </style>
 
     <style name="SearchInputContainer" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="cursorColor">@color/white</item>
         <item name="boxStrokeWidth">0dp</item>
         <item name="endIconTint">@color/white</item>
         <item name="boxStrokeWidthFocused">0dp</item>
@@ -119,6 +120,7 @@
     </style>
 
     <style name="SearchInputEditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:inputType">textCapSentences</item>
         <item name="android:textAppearance">@style/OutlinedInputText</item>
         <item name="android:textColor">@color/white</item>
    </style>
@@ -185,13 +187,11 @@
         <item name="chipBackgroundColor">@color/grey3</item>
         <item name="chipStrokeWidth">0dp</item>
         <item name="chipIconVisible">true</item>
-        <!--        <item name="chipIconTint"></item>-->
         <item name="android:textColor">@color/white</item>
         <item name="shapeAppearance">@style/ChipShape</item>
         <item name="closeIconVisible">false</item>
         <item name="checkedIconVisible">false</item>
-        <item name="android:textAppearance">@style/Title4
-        </item><!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Chip</item>-->
+        <item name="android:textAppearance">@style/Title4</item>
     </style>
 
     <style name="ThemeOverlay.App.Chip" parent="">
@@ -204,6 +204,18 @@
 
     <style name="ChipShape" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerSize">50%</item>
+    </style>
+
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/blue</item>
+        <item name="colorOnSurface">@color/blue</item>
+    </style>
+
+    <style name="Switch" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="thumbTint">@color/white</item>
+        <item name="colorPrimary">@color/blue</item>
     </style>
 
 

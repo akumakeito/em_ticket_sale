@@ -1,34 +1,37 @@
-package com.akumakeito.ticketsales
+package com.akumakeito.ticketsales.screens
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.navigation.ui.NavigationUI
+import com.akumakeito.ticketsales.R
+import com.akumakeito.ticketsales.TicketsApp
 import com.akumakeito.ticketsales.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var navController: NavController
+    lateinit var navController: NavController
+
+    private val component by lazy {
+        (application as TicketsApp).component
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        component.inject(this)
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         val navHostFragment = supportFragmentManager
-                .findFragmentById(R.id.nav_host) as NavHostFragment
+            .findFragmentById(R.id.nav_host) as NavHostFragment
 
         navController = navHostFragment.navController
 
 
         val bottomNavView = binding.bottomNavigation
-        setupWithNavController(bottomNavView, navController)
-
+        NavigationUI.setupWithNavController(bottomNavView, navController)
     }
 }

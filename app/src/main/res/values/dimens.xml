@@ -18,4 +18,5 @@
     <dimen name="spacing_24dp">24dp</dimen>
     <dimen name="small_image_size_40dp">40dp</dimen>
     <dimen name="spacing_12dp">12dp</dimen>
+    <dimen name="spacing_67">67dp</dimen>
 </resources>

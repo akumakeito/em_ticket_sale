@@ -17,6 +17,9 @@ android {
     }
 
     buildTypes {
+        debug {
+
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -42,6 +45,8 @@ dependencies {
 
     implementation (libs.dagger)
     kapt(libs.dagger.compiler)
+
+    implementation(libs.androidx.preference.ktx)
 
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)

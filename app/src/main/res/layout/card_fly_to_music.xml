@@ -38,7 +38,7 @@
 
     <ImageView
         android:contentDescription="@string/tickets"
-        android:id="@+id/tv_ticket_price"
+        android:id="@+id/iv_ticket_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_tickets"
@@ -47,13 +47,14 @@
         android:layout_marginTop="@dimen/spacing_4"/>
 
     <TextView
+        android:id="@+id/tv_ticket_price"
         style="@style/Text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_ticket_price"
-        app:layout_constraintStart_toEndOf="@+id/tv_ticket_price"
-        app:layout_constraintTop_toTopOf="@id/tv_ticket_price"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_ticket_price"
+        app:layout_constraintStart_toEndOf="@+id/iv_ticket_price"
+        app:layout_constraintTop_toTopOf="@id/iv_ticket_price"
         android:text="@string/price"
         tools:text="от 22 264 ₽" />
 

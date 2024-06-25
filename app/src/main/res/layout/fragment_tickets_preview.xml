@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingHorizontal="@dimen/spacing_16"
     android:background="?attr/background"
-    tools:context=".TicketsPreviewFragment">
+    android:paddingHorizontal="@dimen/spacing_16"
+    tools:context=".screens.tickets.TicketsPreviewFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/search_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey3"
-        android:background="@drawable/search_background_shape"
         android:layout_marginTop="46dp"
+        android:background="@drawable/search_background_shape"
+        android:backgroundTint="@color/grey3"
         android:paddingStart="@dimen/spacing_8"
         android:paddingEnd="@dimen/spacing_16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/iv_search_icon"
+            android:id="@+id/iv_back_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             app:barrierDirection="start"
             app:constraint_referenced_ids="from_input_container,divider,to_input_container"
-            app:layout_constraintStart_toEndOf="@id/iv_search_icon" />
+            app:layout_constraintStart_toEndOf="@id/iv_back_icon" />
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -48,11 +48,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="@string/from_hint"
-            app:layout_constraintEnd_toEndOf="parent"
             app:endIconCheckable="true"
-            app:endIconTint="@color/white"
             app:endIconDrawable="@drawable/ic_change_directions"
             app:endIconMode="custom"
+            app:endIconTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/barrier"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -77,104 +77,162 @@
             style="@style/SearchInputContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:endIconTint="@color/white"
             android:hint="@string/to_hint"
-            app:endIconMode="clear_text"
-            app:endIconDrawable="@drawable/ic_clear"
             app:endIconCheckable="true"
+            app:endIconDrawable="@drawable/ic_clear"
+            app:endIconMode="custom"
+            app:endIconTint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/barrier"
             app:layout_constraintTop_toBottomOf="@id/from_input_container">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/to_edit_text"
-                android:layout_width="match_parent"
                 style="@style/SearchInputEditText"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_group"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/chip_group_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:singleLine="true"
         app:layout_constraintTop_toBottomOf="@+id/search_container">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_date_back"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/ChipSuggestion"
-            app:chipIcon="@drawable/ic_add"
-            android:text="@string/back_date"/>
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_date_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/ChipSuggestion"
-            android:text="@string/date_start"
-            tools:text="24 фев, сб"/>
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_people_class"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/ChipSuggestion"
-            app:chipIcon="@drawable/ic_profile"
-            android:text="@string/people_class"
-            tools:text="1,эконом"/>
+            app:singleLine="true">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/ChipSuggestion"
-            app:chipIcon="@drawable/ic_filter"
-            android:text="@string/filters"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_date_back"
+                style="@style/ChipSuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back_date"
+                app:chipIcon="@drawable/ic_add" />
 
-    </com.google.android.material.chip.ChipGroup>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_date_start"
+                style="@style/ChipSuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="24 фев, сб" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_people_class"
+                style="@style/ChipSuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/people_class"
+                app:chipIcon="@drawable/ic_profile"
+                tools:text="1,эконом" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_filter"
+                style="@style/ChipSuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filters"
+                app:chipIcon="@drawable/ic_filter" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
 
     <LinearLayout
         android:id="@+id/rv_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
         android:layout_marginTop="@dimen/spacing_12dp"
-        android:padding="@dimen/spacing_16"
-        app:layout_constraintTop_toBottomOf="@id/chip_group"
         android:background="@drawable/search_background_shape"
         android:backgroundTint="@color/grey1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chip_group_scroll_view">
 
         <TextView
+            style="@style/Title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/straight_flight"
-            style="@style/Title2"/>
+            android:text="@string/straight_flight" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_tickets_preview_list"
+            android:layout_marginTop="@dimen/spacing_8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/card_tickets_preview"/>
+            tools:listitem="@layout/card_tickets_preview" />
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_show_all_tickets"
+        style="@style/FilledButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/FilledButtonStyle"
         android:layout_marginTop="@dimen/spacing_24dp"
+        android:text="@string/show_all_tickets"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_container" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_container"
-        android:text="@string/show_all_tickets"/>
+        android:layout_marginTop="@dimen/spacing_24dp"
+        android:background="@drawable/search_background_shape"
+        android:backgroundTint="@color/grey1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_16"
+        app:layout_constraintTop_toBottomOf="@id/btn_show_all_tickets">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/subscribes"
+            android:src="@drawable/ic_subscribes"
+            app:tint="@color/blue" />
+
+        <TextView
+            style="@style/Text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_8"
+            android:layout_weight="1"
+            android:text="@string/price_subscribe" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            style="@style/Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

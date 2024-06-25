@@ -23,16 +23,20 @@
     <string name="phuket">Пхукет</string>
     <string name="back_date">обратно</string>
     <string name="filters">фильтры</string>
-    <string name="date_start">%1$d %2$s, %3$s</string>
     <string name="people_class">%1$d,%2$s</string>
-    <string name="ticket_price">%1$d ₽</string>
+    <string name="ticket_price">%1$s ₽</string>
     <string name="ticket_time">%1$s - %2$s</string>
     <string name="from_to">%1$s - %2$s</string>
-    <string name="date_pass">%1$s,%2$s пассажир</string>
+    <string name="date_pass">%1$s, %2$s пассажир</string>
     <string name="time_in_road">%1$s в пути %2$s</string>
     <string name="straight_flight">Прямые рейсы</string>
     <string name="show_all_tickets">Посмотреть все билеты</string>
     <string name="back">back</string>
     <string name="price_graph">График цен</string>
+    <string name="something_went_wrong">Что-то пошло не так</string>
+    <string name="choose_date_from">Выберите дату отправления</string>
+    <string name="choose_date_to">Выберите дату возвращения</string>
+    <string name="no_transfer">/Без пересадок</string>
+    <string name="price_subscribe">Подписка на цену</string>
 
 </resources>
