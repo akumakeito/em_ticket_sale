@@ -105,7 +105,7 @@ fun getTravelTime(departure: String, arrival: String): String {
         }
     }
 
-    return travelHours + travelMinutes
+    return "$travelHours${travelMinutes}ч"
 }
 
 fun dayFullMonthDateFormat(departureDate: Long): String {
